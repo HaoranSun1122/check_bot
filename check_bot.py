@@ -4,20 +4,19 @@ from bs4 import BeautifulSoup
 import time
 from telepot.loop import MessageLoop
 
-chat_id_list = [224562648,]
+#Replace YOUR _CHAD_ID with your chat id code
+chat_id_list = [YOUR_CHAD_ID,]
 
-bot = telepot.Bot('441503260:AAE2HNhWroVQHDEzkmBpT7REvtXI4PBfu7s')
+bot = telepot.Bot('TOKEN')
 
-list_link_all = ["https://www.unieuro.it/online/Playstation-5/PlayStation-5-Digital-Edition-pidSONPS5DIGITAL","https://www.unieuro.it/online/Playstation-5/PlayStation-5-pidSONPS5DISC",
-                "https://www.trony.it/online/console-giochi-e-tempo-libero/console/play-station-5/sony-ent-playstation-5_sku-2200010367", "https://www.euronics.it/console/sony-computer/playstation-5-digital-edition/eProd202008907/",]
+#Insert all product link you want to check
+list_link = ["first_link","second_link","third_link", "fourth_link",]
 
-list_link = ["https://www.unieuro.it/online/Playstation-5/PlayStation-5-Digital-Edition-pidSONPS5DIGITAL",]
 
 is_avable = False
 
 
-
-def find_ps5(list_link):
+def find_product(list_link):
 
     global is_avable
 
@@ -32,26 +31,23 @@ def find_ps5(list_link):
 
                 is_avable = True
                 for chat_id in chat_id_list:
-                    bot.sendMessage(chat_id, "!!! PS5 DISPONIBILE !!!")
-                    bot.sendMessage(chat_id, "IL LINK DI PREORDINE E':")
+                    bot.sendMessage(chat_id, "!!! AVABLE !!!")
+                    bot.sendMessage(chat_id, "THE LINK IS:")
                     bot.sendMessage(chat_id, link_)
-                    print("!!! PS5 DISPONIBILE !!!")
+                    print("!!! AVABLE !!!")
                     print(link_)
                     continue
 
             elif (soup.findAll("div", {"class": "available off susy--span-4"}) or soup.find(id="nondisponibile") or soup.findAll("span", {"class": "button__icon--iconTxt i-notifica"})):
 
-                #print("PS5 NON DISPONIBILE")
-                #for chat_id in chat_id_list:
-                    #bot.sendMessage(chat_id, "PS5 NON DISPONIBILE")
                 continue
 
             else:
 
                 is_avable = True
                 for chat_id in chat_id_list:
-                    bot.sendMessage(chat_id,"!!! PROBLEMA BOT PS5 !!!")
-                    print("!!! PROBLEMA BOT PS5 !!!")
+                    bot.sendMessage(chat_id,"!!! PROBLEM, CHECK THE BOT !!!")
+                    print("!!! PROBLEM, CHECK THE BOT !!!")
                     print(link_)
                     continue
 
@@ -64,40 +60,21 @@ def handle(msg):
     print('Got command: %s' % command)
 
     if sender in chat_id_list :
-
-        if command == '/True':
-
-            kill = True
-            bot.sendMessage(chat_id, 'Attivato')
-
-        elif command == '/False':
-
-            kill = False
-            bot.sendMessage(chat_id, 'Disattivato')
-
-        elif command == '/riavvia':
-
-            bot.sendMessage(chat_id, 'Riavvio in corso signore...')
-            os.system("sudo reboot")
-            bot.sendMessage(chat_id, 'Riavvio completato')
-
-        elif command == '/spegni':
-
-            bot.sendMessage(chat_id, 'Spegnimento in corso signore...')
-            os.system("sudo shutdown -h now")
-
-        elif command == '/ps5':
-
-            find_ps5(list_link)
-
-            if (is_avable == False):
-
-                bot.sendMessage(chat_id, 'Mi dispiace, ma non è ancora disponibile in nessun negozio.')
+      
+      if command == '/is_avable':
+        
+        find_product(list_link)
+        
+          if (is_avable == False):
+            
+            bot.sendMessage(chat_id, 'Not avable yet.')
 
 
     elif sender not in chat_id_list:
-      bot.sendMessage(224562648, chat_id)
-      bot.sendMessage(chat_id, 'Accesso negato')
+      
+      #Replace YOUR _CHAD_ID with your chat id code
+      bot.sendMessage(YOUR_CHAD_ID, chat_id)
+      bot.sendMessage(chat_id, 'You don\'t have the permission')
 
 
 MessageLoop(bot, handle).run_as_thread()
@@ -106,7 +83,7 @@ print('I am listening ...')
 
 while 1:
 
-    MessageLoop(bot, find_ps5(list_link))
+    MessageLoop(bot, find_product(list_link))
     time.sleep(90)
 
     if (is_avable == True):
