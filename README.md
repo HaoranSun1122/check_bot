@@ -8,8 +8,8 @@ Steps:
 
 2) Open you Terminal and install telepot and requests (`pip3 install telepot && pip3 install requests`)
 
-3) Replace the following line in the file check_bot.py
-            **TOKEN** -> replace with you bot token (you can find it on BotFather)
+3) Replace the following line in the file check_bot.py<br/>
+            **TOKEN** -> replace with you bot token (you can find it on BotFather)<br/>
             **YOUR_CHAD_ID** -> you telegram chat id
             
 4) Replace **first_link** ecc... with one or more product link
