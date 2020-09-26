@@ -1,20 +1,20 @@
 # check_bot
 
-this bot checks the availability of a product in the main Italian electronics stores (such as euronics, trony, unieuro) and send you a message directly on your telegram app
+this bot checks the availability of a product in the main **Italian electronics stores** (such as euronics, trony, unieuro) and send you a message directly on your telegram app
 
 Steps:
 
 1) Create the bot with BotFather on Telegram
 
-2) install telepot and requests (pip3 install telepot && pip3 install requests)
+2) install telepot and requests (**pip3 install telepot && pip3 install requests**)
 
 3) Replace the following line in the file check_bot.py
-            TOKEN -> replace with you bot token (you can find it on BotFather)
-            YOUR_CHAD_ID -> you telegram chat id
+            **TOKEN** -> replace with you bot token (you can find it on BotFather)
+            **YOUR_CHAD_ID** -> you telegram chat id
             
-4) Replace first_link ecc... with one or more product link
+4) Replace **first_link** ecc... with one or more product link
 
-5) Open you Terminal and type: python3 check_bot.py
+5) Open you Terminal and type: **python3 check_bot.py**
 
 
 Done!
