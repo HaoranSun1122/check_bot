@@ -18,6 +18,7 @@ Steps:
 5) Open you Terminal and type: `python3 check_bot.py`
 
 
+
 Done!
 Wait for the product to be available and your bot will notify you with a message directly on your smartphone.
 
