@@ -16,7 +16,6 @@ Steps:
             **YOUR_CHAD_ID** -> you telegram chat id
 
 <br/>
-<br/>
 4) Replace **first_link** ecc... with one or more product link
 <br/>
 <br/>
