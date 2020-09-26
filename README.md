@@ -6,7 +6,7 @@ Steps:
 
 1) Create the bot with BotFather on Telegram
 
-2) install telepot and requests (**pip3 install telepot && pip3 install requests**)
+2) Open you Terminal and install telepot and requests (`pip3 install telepot && pip3 install requests`)
 
 3) Replace the following line in the file check_bot.py
             **TOKEN** -> replace with you bot token (you can find it on BotFather)
@@ -14,7 +14,7 @@ Steps:
             
 4) Replace **first_link** ecc... with one or more product link
 
-5) Open you Terminal and type: **python3 check_bot.py**
+5) Open you Terminal and type: `python3 check_bot.py`
 
 
 Done!
