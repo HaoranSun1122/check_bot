@@ -1,3 +1,12 @@
+**Attention!!** the program at the moment is no longer functional as the sites have been updated and also the various telegram libraries.
+
+I am working on the next version but it takes some time.
+
+Also remember that both this and the future bot do not allow the purchase of goods and or services.
+
+They simply notify you when the product is back in stock.
+
+---
 # check_bot
 
 this bot checks the availability of a product in the main **Italian electronics stores** (such as euronics, trony, unieuro) and send you a message directly on your telegram app
